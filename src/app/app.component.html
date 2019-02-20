@@ -1,6 +1,6 @@
 <!-- <div class="container">
   <div class="row">
-    <div class="col-xs-12">
+    <div class="col-12">
       <h3>App Component</h3>
       <hr>
       <app-servers></app-servers>
@@ -11,16 +11,37 @@
     </div>
   </div>
 </div> -->
-
+<!-- 
 <div class="container">
-  <app-cockpit></app-cockpit>
+  <app-cockpit 
+    (serverCreated)="onServerAdded($event)"
+    (blueprintCreated)="onBlueprintAdded($event)"
+    >
+  </app-cockpit>
   <hr>
   <div class="row">
-    <div class="col-xs-12">
+    <div class="col-12">
+      <button class="btn btn-primary" (click)="onChangeFirst()">Change First</button>
+      <button class="btn btn-danger" (click)="onDestroyFirst()">Destroy First</button>
       <app-server-element
         *ngFor="let serverElement of serverElements"
-        [element]="serverElement"
-      ></app-server-element>
+        [srvElement]="serverElement"
+        [name]="serverElement.name"
+      >
+      <p #contentParagraph>
+        <strong *ngIf="serverElement.type === 'server'" style="color:red">{{ serverElement.content }}</strong>
+        <em *ngIf="serverElement.type === 'blueprint'">{{ serverElement.content }}</em>
+      </p>
+    </app-server-element>
     </div>
   </div>
+</div> -->
+
+<div class="container">
+  <app-game-control
+    (gameStarted)="onGameStarted($event)"
+    (gameStopped)="onGameStopped($event)"
+  ></app-game-control>
+  <app-even></app-even>
+  <app-odd></app-odd>
 </div>
