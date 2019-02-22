@@ -4,10 +4,6 @@
 -->
 
 <label>Server Name</label>
-<!-- <input 
-  type='text'
-  class='form-control'
-  (input)='onUpdateServerName($event)'> -->
   <input 
   type='text'
   class='form-control'
@@ -25,8 +21,6 @@
   <p>No server created</p>
   </ng-template>
 
-
-
 <input 
   type='text'
   class="form-control"
@@ -41,6 +35,21 @@
 </button>
 <!-- Also can use useName === '' -->
 
-<app-server></app-server>
-<app-server></app-server>
+<!-- <app-server></app-server> -->
+<app-server *ngFor="let server of servers"></app-server>
+
+
+<button
+  class="btn btn-primary"
+  (click)='onDisplayDetails()'
+  >Display Details</button>
+
+  <p *ngIf="displayP"> Secret Password = tuna</p>
+  <p 
+    *ngFor="let logs of logDisplay; let i = index "
+    [ngStyle]="{backgroundColor: i >= 4 ? 'blue' :'transparent'}"
+    [ngClass]="{'white-text':i>=4}"
+  >{{logs}}</p>
+
+
 
