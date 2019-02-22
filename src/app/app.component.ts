@@ -10,7 +10,9 @@ export class AppComponent {
   title = 'my-first-app';
   name = 'Tanima '
 
- 
+  oddNumbers : number[] = [];
+  evenNumbers : number[] = [];
+
   serverElements = [
     {
       type:'server',
@@ -45,10 +47,14 @@ export class AppComponent {
     this.serverElements.splice(0,1)
   }
 
-  onGameStarted(gameData: {numberEvent:string}) {
+  onGameStarted(gameData:number) {
     console.log(gameData)
+    if(gameData % 2 === 0 ) {
+      this.evenNumbers.push(gameData)
+    } else  {
+      this.oddNumbers.push(gameData)
+    }
+
   }
-  onGameStopped(gameData:{numberEvent:string}) {
-    console.log(gameData)
-  }
+  
 }
