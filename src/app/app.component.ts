@@ -20,6 +20,12 @@ export class AppComponent {
       content:'test server content'}
   ];
 
+  numbers = [1,2,3,4,5]
+  oddNumber = [1,3,5]
+  evenNumber = [2,4,6]
+  onlyOdd = false
+
+
   onServerAdded(serverData: {serverName: string, serverContent:string}) {
     
     this.serverElements.push({
