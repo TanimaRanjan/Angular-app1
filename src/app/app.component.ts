@@ -24,6 +24,7 @@ export class AppComponent {
   oddNumber = [1,3,5]
   evenNumber = [2,4,6]
   onlyOdd = false
+  value = 100;
 
 
   onServerAdded(serverData: {serverName: string, serverContent:string}) {
