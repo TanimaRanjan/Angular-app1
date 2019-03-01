@@ -46,7 +46,7 @@
   <app-even *ngFor="let evennumber of evenNumbers" [number]="evennumber"></app-even>
   <app-odd *ngFor="let oddnumber of oddNumbers" [number]="oddnumber"></app-odd>
 </div> -->
-
+<!-- 
 <div class="container">
   <div class="list-group">
     <div class="col-12">
@@ -62,7 +62,7 @@
             [ngStyle]="{backgroundColor: odd % 2 !== 0 ? 'yellow' : 'transparent'}"
             *ngFor ="let odd of oddNumber" > {{ odd }} 
           </li> 
-        </div>
+        </div> -->
         <!-- <div *ngIf="!onlyOdd">
           <li class="list-group-item"
           [ngClass]="{odd : even % 2 !== 0}"
@@ -79,7 +79,7 @@
           </li> 
         </div>
       </ng-template> -->
-      <div *appUnless="onlyOdd">
+      <!-- <div *appUnless="onlyOdd">
           <li class="list-group-item"
           [ngClass]="{odd : even % 2 !== 0}"
           [ngStyle]="{backgroundColor: even % 2 !== 0 ? 'yellow' : 'transparent'}"
@@ -101,15 +101,19 @@
         </div>
     </div>
   </div>
-  <div class="dropdown">
-      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" 
-      aria-haspopup="true" aria-expanded="true">
-        Dropdown button
-      </button>
-      <div class="dropdown-menu show" aria-labelledby="dropdownMenuButton">
-        <a class="dropdown-item" href="#">Action</a>
-        <a class="dropdown-item" href="#">Another action</a>
-        <a class="dropdown-item" href="#">Something else here</a>
-      </div>
+</div> -->
+
+<div class="container">
+    <div class="list-group">
+        <div class="col-12">
+            <app-new-account (accountAdded)="onAccountAdded($event)"></app-new-account>
+              <hr>
+            <app-account
+              *ngFor="let acc of accounts;let i= index"
+              [account]="acc"
+              [id]="i"
+              (statusChanged)="onStatusChanged($event)"
+            ></app-account>
+        </div>
     </div>
 </div>
