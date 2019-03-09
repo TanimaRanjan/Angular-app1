@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
+import { AccountService } from './accounts.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'], 
+  providers: [AccountService]
 })
 export class AppComponent {
 
@@ -64,21 +66,14 @@ export class AppComponent {
 
   }
   
-  accounts = [
-    {
-      name: 'Master Account',
-      status: 'active'
-    },
-    {
-      name: 'Testaccount',
-      status: 'inactive'
-    },
-    {
-      name: 'Hidden Account',
-      status: 'unknown'
-    }
-  ];
+  accounts : {name: string, status:string} [] = []
 
+  constructor(private accountService: AccountService) {
+
+  }
+  ngOnInit() {
+    this.accounts= this.accountService.accounts
+  }
   onAccountAdded(newAccount: {name: string, status: string}) {
     this.accounts.push(newAccount);
   }
