@@ -56,13 +56,13 @@ export class AppComponent {
 
   // }
   
-  accounts : {name: string, status:string} [] = []
-  constructor(private accountService: AccountsService) {
+  // accounts : {name: string, status:string} [] = []
+  // constructor(private accountService: AccountsService) {
 
-  }
-  ngOnInit() {
-    this.accounts= this.accountService.accounts
-  }
+  // }
+  // ngOnInit() {
+  //   this.accounts= this.accountService.accounts
+  // }
   
   // onAccountAdded(newAccount: {name: string, status: string}) {
   //   this.accounts.push(newAccount);
