@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 // import { HttpModule } from '@angular/http';
 
- import { AppComponent } from './app.component';
+//  import { AppComponent } from './app.component';
 //  import { ServerComponent } from './server/server.component';
 //  import { ServersComponent } from './servers/servers.component';
 import { WarningAlertComponent } from './warning-alert/warning-alert.component';
@@ -47,7 +47,11 @@ import { ServersService } from './servers/servers.service';
     BetterHighlightDirective, 
     UnlessDirective, 
     NewAccountComponent, 
-    AccountComponent, EditServerComponent
+    AccountComponent, 
+    EditServerComponent, 
+    UserComponent,
+    HomeComponent, 
+    UsersComponent
   ],
   imports: [
     BrowserModule,
@@ -55,7 +59,7 @@ import { ServersService } from './servers/servers.service';
     // ,
     // HttpModule
   ],
-  providers: [AccountsService, LoggingService],
+  providers: [AccountsService, LoggingService, ServersService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
