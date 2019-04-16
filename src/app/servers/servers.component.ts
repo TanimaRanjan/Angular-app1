@@ -10,7 +10,11 @@ import { Router, ActivatedRoute } from '@angular/router'
 
 export class ServersComponent implements OnInit {
 
-  private servers: {id: number, name: string, status: string}[] = [];
+  private servers: 
+    {   id: number, 
+        name: string, 
+        status: string 
+      }[] = [];
 
   constructor(
       private serversService: ServersService, 
