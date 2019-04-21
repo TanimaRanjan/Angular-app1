@@ -17,13 +17,11 @@ export class GameControlComponent implements OnInit {
   ngOnInit() {
   }
 
-  
   onStartGame() {
     this.numberInterval = setInterval(() => {  
       this.gameStarted.emit(this.lastNum + 1)
       this.lastNum ++ 
-    }
-    , 1000)
+    }, 1000)
   }
 
   onStopGame() {
